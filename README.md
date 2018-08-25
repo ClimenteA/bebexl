@@ -14,7 +14,7 @@ Do the work you need to do, but make sure you keep the same row lentgh for each 
 <br/>
 <br/>
 Write the dictionary which looks like pandas df.to_dict('list') to a xls file.
-<br/>
+
 ```
 write_excel(table_dict, excelName, sheetName="Sheet1")
 ```
