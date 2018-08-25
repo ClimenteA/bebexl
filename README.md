@@ -37,4 +37,4 @@ xl.write_excel(table_dict, excelName, sheetName="Sheet1")
 <br/>
 Uses xlrd, xlwt modules to do that. 
 <br/>
-In development..
+
