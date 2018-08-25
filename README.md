@@ -12,7 +12,7 @@ Get from xls and xlsx file a dictionary
 ```
 table_dict = xl.read_excel(path_to_workbook, sheetName=None, sheetIndex=0)
 
-#table_dict > {Col1: [cell1, cell1 ..], Col2:[cell1, cell2...etc]}
+#table_dict looks like: {Col1: [cell1, cell1 ..], Col2:[cell1, cell2...etc]}
 
 ```
 
