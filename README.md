@@ -13,8 +13,13 @@ Get from xls and xlsx file a dictionary like: {Col1: [cell1, cell1 ..], Col2:[ce
 table_dict = xl.read_excel(path_to_workbook, sheetName=None, sheetIndex=0)
 ```
 <br/>
-Do the work you need to do, but make sure you keep the same row length for each list in the dict.
+You can get the rows and columns numbers and the column name list
+```
+shape  = table_dict["shape"] # (120, 10)
+columns = table_dict["columns"] # ["col1", "col2", "col3"...]
+```
 <br/>
+Do the work you need to do, but make sure you keep the same row length for each list in the dict.
 <br/>
 Write the dictionary which looks like pandas df.to_dict('list') to a xls file.
 
