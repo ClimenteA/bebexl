@@ -9,7 +9,6 @@ Get from xls and xlsx file a dictionary like: {Col1: [cell1, cell1 ..], Col2:[ce
 table_dict = read_excel(path_to_workbook, sheetName=None, sheetIndex=0)
 ```
 <br/>
-<br/>
 Do the work you need to do, but make sure you keep the same row lentgh for each list in the dict.
 <br/>
 <br/>
