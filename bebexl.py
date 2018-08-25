@@ -78,7 +78,6 @@ def read_excel(path_to_workbook, sheetName=None, sheetIndex=0):
 
 #tb = read_excel(path_to_workbook, sheetName=None, sheetIndex=2)
 
-import xlwt
 
 def checkBeforeWrite(table_dict):
     """Check key:list dict if the list are of type list and of the same lentgh"""
