@@ -1,6 +1,5 @@
 # bebexl
-read(xls, xlsx) - write(xls) in the shape of a dictionary like:<br/>
-{Col1: [cell1, cell1 ..], Col2:[cell1, cell2...etc]} (which looks like pandas df.to_dict("list")) 
+read(xls, xlsx) - write(xls) in the shape of a dictionary like pandas df.to_dict("list")
 <br/>
 Use case:
 <br/>
@@ -8,10 +7,15 @@ Use case:
 import bebexl as xl
 ```
 
-Get from xls and xlsx file a dictionary like: {Col1: [cell1, cell1 ..], Col2:[cell1, cell2...etc]}
+Get from xls and xlsx file a dictionary 
+
 ```
 table_dict = xl.read_excel(path_to_workbook, sheetName=None, sheetIndex=0)
+
+#table_dict > {Col1: [cell1, cell1 ..], Col2:[cell1, cell2...etc]}
+
 ```
+
 <br/>
 You can get the rows and columns numbers and the column name list
 <br/>
