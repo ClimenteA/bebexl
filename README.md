@@ -9,7 +9,7 @@ Get from xls and xlsx file a dictionary like: {Col1: [cell1, cell1 ..], Col2:[ce
 table_dict = read_excel(path_to_workbook, sheetName=None, sheetIndex=0)
 ```
 <br/>
-Do the work you need to do, but make sure you keep the same row lentgh for each list in the dict.
+Do the work you need to do, but make sure you keep the same row length for each list in the dict.
 <br/>
 <br/>
 Write the dictionary which looks like pandas df.to_dict('list') to a xls file.
