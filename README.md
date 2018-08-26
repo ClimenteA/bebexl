@@ -11,20 +11,10 @@ from bebexl import read_excel, write_excel
 Get from xls and xlsx file a dictionary 
 
 ```
-table_dict = read_excel(path_to_workbook, sheetName=None, sheetIndex=0)
+table_dict = read_excel(path_to_workbook, sheetName=None, sheetIndex=0, showInfo=False)
 
 #table_dict looks like: {Col1: [cell1, cell1 ..], Col2:[cell1, cell2...etc]}
 
-```
-
-<br/>
-You can get the rows and columns numbers and the column name list
-<br/>
-
-
-```
-shape  = table_dict["shape"] # (120, 10)
-columns = table_dict["columns"] # ["col1", "col2", "col3"...]
 ```
 
 <br/>
