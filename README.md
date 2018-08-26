@@ -5,13 +5,13 @@ read(xls, xlsx) - write(xls) in the shape of a dictionary like pandas df.to_dict
 Use case:
 <br/>
 ```
-import bebexl as xl
+from bebexl import read_excel, write_excel
 ```
 
 Get from xls and xlsx file a dictionary 
 
 ```
-table_dict = xl.read_excel(path_to_workbook, sheetName=None, sheetIndex=0)
+table_dict = read_excel(path_to_workbook, sheetName=None, sheetIndex=0)
 
 #table_dict looks like: {Col1: [cell1, cell1 ..], Col2:[cell1, cell2...etc]}
 
@@ -36,7 +36,7 @@ columns = table_dict["columns"] # ["col1", "col2", "col3"...]
 Write the dictionary which looks like pandas df.to_dict('list') to a xls file.
 
 ```
-xl.write_excel(table_dict, excelName, sheetName="Sheet1")
+write_excel(table_dict, excelName, sheetName="Sheet1")
 ```
 
 <br/>
