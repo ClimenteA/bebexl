@@ -57,7 +57,7 @@ def dictTable(sheet):
         
         tableDict[colName] = rowli
     
-    return tableDict, shape, list(columns_dict.values())
+    return tableDict, shape, tuple(columns_dict.values())
 
 
 def read_excel(path_to_workbook, sheetName=None, sheetIndex=0):
@@ -78,6 +78,7 @@ def read_excel(path_to_workbook, sheetName=None, sheetIndex=0):
 
 #tb = read_excel(path_to_workbook, sheetName=None, sheetIndex=2)
 
+import xlwt
 
 def checkBeforeWrite(table_dict):
     """Check key:list dict if the list are of type list and of the same lentgh"""
