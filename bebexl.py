@@ -60,25 +60,23 @@ def dictTable(sheet):
     return tableDict, shape, tuple(columns_dict.values())
 
 
-def read_excel(path_to_workbook, sheetName=None, sheetIndex=0):
+def read_excel(path_to_workbook, sheetName=None, sheetIndex=0, showInfo=False):
     """Return from the excel a df.to_dict("list") dict like in pandas
        {"co1": [cell1, cell2, etc], "col2":[cell1, cell2, etc]}
     """
     
     book = get_book(path_to_workbook)
-    sheet = get_sheet(book)
+    sheet = get_sheet(book, sheetName, sheetIndex)
     
     table_dict, shape, columnNames = dictTable(sheet)
+    if showInfo:
+        print("Rows/Cols: ", shape, "Columns:\n",  columnNames)
     
-    table_dict["shape"] = shape
-    table_dict["columns"] = columnNames
-     
     return table_dict
 
 
 #tb = read_excel(path_to_workbook, sheetName=None, sheetIndex=2)
 
-import xlwt
 
 def checkBeforeWrite(table_dict):
     """Check key:list dict if the list are of type list and of the same lentgh"""
@@ -87,8 +85,6 @@ def checkBeforeWrite(table_dict):
     
     lenli = []
     for kcol, vli in table_dict.items():
-        if kcol.strip() in ["shape", "columns"]:
-            continue
         if isinstance(vli, list):
             lenli.append(len(vli))
         else:
@@ -112,8 +108,7 @@ def write_excel(table_dict, excelName, sheetName="Sheet1"):
     sheet = book.add_sheet(sheetName)
 
     columns = list(tb_dict.keys())
-    columns = [c for c in columns if c.strip() not in ["shape", "columns"]]
-
+    
     for icol, col in enumerate(columns):
         writeColName = True
         for icell, cell in enumerate(tb_dict[col]):
